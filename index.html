@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Camp Strong Performance | Sports Performance Training in Apopka, FL</title>
 <meta name="description" content="Camp Strong Performance is Apopka's home for athlete development — sports performance training built on 25 years of NBA and collegiate strength & conditioning experience. Athlete, adult, veteran, and personal training programs. Book a free assessment: (352) 877-2186.">
-<meta name="keywords" content="sports performance Apopka, athlete training Apopka FL, strength and conditioning Apopka, veteran fitness Apopka, personal training Apopka, speed and agility training">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Camp Strong Performance | Sports Performance Training in Apopka, FL">
 <meta property="og:description" content="Not a gym — a performance facility built on 25 years of NBA and collegiate strength & conditioning experience. Athlete, adult, veteran & personal training in Apopka, FL. Book a free assessment.">
 <meta property="og:url" content="https://camp-strong.com/">
-<meta property="og:image" content="assets/logo-on-black.png">
+<meta property="og:image" content="https://camp-strong.com/assets/gen-hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://camp-strong.com/assets/gen-hero.jpg">
 <meta name="theme-color" content="#060606">
 <link rel="icon" href="assets/logo-transparent.png">
 <script type="application/ld+json">
@@ -63,11 +63,11 @@
   .brand img { height:52px; width:auto; display:block; }
   @media (max-width:560px){ .brand img{ height:40px; } }
   .top-actions { display:flex; align-items:center; gap:10px; flex:none; }
-  .callbtn { display:flex; align-items:center; gap:7px; color:var(--txt); text-decoration:none; padding:10px 15px;
+  .callbtn { display:flex; align-items:center; gap:7px; min-height:44px; color:var(--txt); text-decoration:none; padding:10px 15px;
     border:1.5px solid var(--line2); border-radius:999px; font-size:14px; font-weight:bold; white-space:nowrap; }
   .callbtn svg { width:16px; height:16px; color:var(--red2); }
   .callbtn:hover { border-color:var(--red); }
-  .bookbtn { display:flex; align-items:center; gap:7px; background:var(--red); color:#fff; text-decoration:none; padding:11px 17px;
+  .bookbtn { display:flex; align-items:center; gap:7px; min-height:44px; background:var(--red); color:#fff; text-decoration:none; padding:11px 17px;
     border-radius:999px; font-size:14px; font-weight:bold; white-space:nowrap; box-shadow:0 4px 16px rgba(184,56,56,.35); }
   .bookbtn:hover { background:var(--red2); }
   @media (max-width:640px){ .callbtn .callnum{ display:none; } .callbtn{ padding:10px 12px; } .bookbtn{ padding:10px 13px; font-size:13px; } }
@@ -130,6 +130,8 @@
   .prog .photo img { height:350px; }
   @media (max-width:760px){ .prog .photo img{ height:260px; } }
   .aboutgrid .photo img { min-height:440px; }
+  [data-slot="about-coach"] { background:#000; }
+  [data-slot="about-coach"] img { object-fit:contain; height:auto; min-height:0; max-height:540px; margin:0 auto; }
   @media (max-width:760px){ .aboutgrid .photo img{ min-height:320px; } }
   .bandphoto { border-top:1px solid var(--red-dk); border-bottom:1px solid var(--red-dk); position:relative; overflow:hidden; }
   .bandphoto img { width:100%; height:260px; object-fit:cover; display:block; }
@@ -139,6 +141,8 @@
 
   /* ---------- SECTIONS ---------- */
   section { padding:52px 22px; max-width:1020px; margin:0 auto; }
+  section[id], .prog[id] { scroll-margin-top:140px; }
+  @media (max-width:560px){ section[id], .prog[id]{ scroll-margin-top:124px; } }
   .eyebrow { text-align:center; font-size:12px; font-weight:bold; letter-spacing:.3em; text-transform:uppercase; color:var(--red2); margin-bottom:10px; }
   h2 { font-size:30px; font-weight:900; text-align:center; margin-bottom:10px; line-height:1.15; }
   h2 .rd { color:var(--red2); }
@@ -249,6 +253,13 @@
   .submitbtn { width:100%; background:var(--red); color:#fff; border:none; border-radius:999px; padding:15px;
     font-size:16px; font-weight:bold; cursor:pointer; font-family:inherit; box-shadow:0 8px 22px rgba(184,56,56,.35); }
   .submitbtn:hover { background:var(--red2); }
+  .ferr { display:none; color:#ff8585; font-size:12.5px; margin-top:6px; line-height:1.45; }
+  .ferr.show { display:block; }
+  .field input[aria-invalid="true"], .field select[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-color:#ff8585; }
+  .formerr { display:none; background:rgba(184,56,56,.14); border:1.5px solid var(--red); border-radius:10px;
+    color:#ffd9d9; font-size:14px; line-height:1.55; padding:12px 14px; margin-bottom:14px; }
+  .formerr.show { display:block; }
+  .submitbtn[disabled] { opacity:.55; cursor:wait; box-shadow:none; }
   .formnote { text-align:center; font-size:12.5px; color:var(--dim); margin-top:13px; line-height:1.5; }
   .formok { display:none; text-align:center; padding:14px 6px 4px; }
   .formok .ok-ic { width:56px; height:56px; margin:0 auto 12px; border-radius:50%; background:rgba(61,220,116,.12);
@@ -268,10 +279,10 @@
   .socials svg { width:21px; height:21px; color:#fff; }
   .socials .slab { font-size:11px; color:var(--dim); text-transform:uppercase; letter-spacing:.14em; margin-top:7px; text-align:center; }
   .fnav { margin:14px 0 4px; font-size:13px; }
-  .fnav a { color:var(--mut); text-decoration:none; margin:0 9px; }
+  .fnav a { color:var(--mut); text-decoration:none; margin:0 2px; display:inline-block; padding:12px 8px; min-height:24px; }
   .fnav a:hover { color:#fff; }
   .fsmall { font-size:12px; color:var(--dim); margin-top:14px; line-height:1.7; }
-  .fsmall .credit { color:#5f5f5f; }
+  .fsmall .credit { color:#8a8a8a; }
 
   @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
 
@@ -309,7 +320,7 @@
   .callink svg { width:15px; height:15px; }
   .callink.ghost { background:transparent; border:1.5px solid var(--red); color:#fff !important; margin-left:6px; }
   .chatchips { flex:none; display:flex; flex-wrap:wrap; gap:7px; padding:10px 12px 4px; background:#0a0a0a; }
-  .chip { border:1.5px solid #3a3a3a; background:#161616; color:#eee; border-radius:999px; padding:8px 13px;
+  .chip { border:1.5px solid #3a3a3a; background:#161616; color:#eee; border-radius:999px; padding:10px 14px; min-height:44px;
     font-size:12.8px; font-weight:bold; cursor:pointer; font-family:inherit; }
   .chip:hover { border-color:var(--red2); }
   .chip.hot { background:var(--red); border-color:var(--red); color:#fff; }
@@ -363,7 +374,7 @@
     </div>
     <div class="stats">
       <div class="stat"><b>25 <span class="rd">Years</span></b><span>NBA &amp; Collegiate S&amp;C Experience</span></div>
-      <div class="stat"><b>4 <span class="rd">Programs</span></b><span>Athlete · Adult · Veteran · 1-on-1</span></div>
+      <div class="stat"><b>4 <span class="rd">Programs</span></b><span>Athlete · Adult · Veteran · Personal Training</span></div>
       <div class="stat"><b>Apopka, <span class="rd">FL</span></b><span>1079 W Orange Blossom Trail</span></div>
     </div>
   </div>
@@ -415,15 +426,15 @@
   <p class="sub">Every program includes instruction in movement quality training, injury resilience, proper functional strength training, explosive power development, linear and lateral speed, and energy system conditioning.</p>
 
   <div class="prog" id="athlete">
-    <figure class="photo" data-slot="program-athlete"><img src="assets/gen-program-athlete.jpg" alt="Young athlete performing sprint-start training on an indoor turf lane at Camp Strong Performance"></figure>
+    <figure class="photo" data-slot="program-athlete"><img src="assets/gen-program-athlete.jpg" alt="Young athlete performing sprint-start training on an indoor turf lane"></figure>
     <div>
       <div class="p-ic"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span class="p-tag">For Developing Athletes</span></div>
       <h3>Athlete Performance</h3>
       <p>Camp Strong was created to bring professional standards to developing athletes right here in Apopka. Athlete Performance applies the same structured, intentional development used at the NBA and collegiate level — scaled to where each athlete is today, and built to where they're headed.</p>
       <ul>
         <li>All four pillars: strength, speed, power, mobility</li>
-        <li>First-step explosiveness and sprint mechanics that transfer to game day</li>
-        <li>Injury resilience work that keeps athletes available all season</li>
+        <li>First-step explosiveness and sprint mechanics training</li>
+        <li>Injury-resilience work built into the program</li>
         <li>Progressive programming — never random workouts</li>
       </ul>
       <a class="mini" href="#book">Book a Free Assessment</a>
@@ -431,7 +442,7 @@
   </div>
 
   <div class="prog flip" id="adult">
-    <figure class="photo" data-slot="program-adult"><img src="assets/gen-program-adult.jpg" alt="Adult athlete performing a barbell deadlift during Adult Performance training"></figure>
+    <figure class="photo" data-slot="program-adult"><img src="assets/gen-program-adult.jpg" alt="Adult athlete performing a barbell deadlift during a training session"></figure>
     <div>
       <div class="p-ic"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/></svg></span><span class="p-tag">For Adults Who Train With Purpose</span></div>
       <h3>Adult Performance</h3>
@@ -447,7 +458,7 @@
   </div>
 
   <div class="prog" id="veteran">
-    <figure class="photo" data-slot="program-veteran"><img src="assets/gen-program-veteran.jpg" alt="Veteran training with battle ropes during Veteran Performance at Camp Strong"></figure>
+    <figure class="photo" data-slot="program-veteran"><img src="assets/gen-program-veteran.jpg" alt="Veteran training with battle ropes in a performance gym"></figure>
     <div>
       <div class="p-ic"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-3.6 8-10V5l-8-3-8 3v7c0 6.4 8 10 8 10z"/></svg></span><span class="p-tag">For Those Who Served</span></div>
       <h3>Veteran Performance</h3>
@@ -463,7 +474,7 @@
   </div>
 
   <div class="prog flip" id="personal">
-    <figure class="photo" data-slot="program-personal"><img src="assets/gen-program-personal.jpg" alt="Coach providing one-on-one personal training instruction at Camp Strong Performance"></figure>
+    <figure class="photo" data-slot="program-personal"><img src="assets/gen-program-personal.jpg" alt="Coach providing one-on-one personal training instruction"></figure>
     <div>
       <div class="p-ic"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></span><span class="p-tag">One-on-One Coaching</span></div>
       <h3>Personal Training</h3>
@@ -472,7 +483,7 @@
         <li>Fully individualized programming across all four pillars</li>
         <li>Direct coaching on every movement, every session</li>
         <li>Built around your goals — performance, weight loss, or return from injury</li>
-        <li>The fastest route from assessment to results</li>
+        <li>A direct, one-on-one path from assessment to results</li>
       </ul>
       <a class="mini" href="#book">Book a Free Assessment</a>
     </div>
@@ -487,12 +498,12 @@
   <p class="sub">No pressure and no guesswork. Here's exactly how joining Camp Strong works.</p>
   <div class="steps">
     <div class="step"><div class="num">1</div><h3>Book Your Free Assessment</h3><p>Fill out the form below or call (352) 877-2186. Pick the program you're interested in — or just tell us your goals.</p></div>
-    <div class="step"><div class="num">2</div><h3>Meet the Team &amp; Get Assessed</h3><p>Tour the facility, talk through your goals and history, and get assessed so your training starts from the right place.</p></div>
+    <div class="step"><div class="num">2</div><h3>Meet the Team &amp; Get Assessed</h3><p>Meet the team, talk through your goals and history, and get assessed so your training starts from the right place.</p></div>
     <div class="step"><div class="num">3</div><h3>Train With a Plan</h3><p>Start structured, progressive training built on the four pillars — with coaching at every session.</p></div>
   </div>
 </section>
 
-<div class="bandphoto" data-slot="facility-band"><img src="assets/gen-facility.jpg" alt="Inside the Camp Strong Performance training facility — turf lane, squat racks, and training equipment"></div>
+<div class="bandphoto" data-slot="facility-band"><img src="assets/gen-facility.jpg" alt="Indoor performance training facility with a turf lane, squat racks, and training equipment"></div>
 
 <!-- ================= STORIES ================= -->
 <section id="stories">
@@ -502,7 +513,7 @@
   <p class="sub">The people who train here say it best.</p>
   <div class="story-grid">
     <div class="story">
-      <p class="s-head">&ldquo;Camp Strong has been a life changing experience.&rdquo;</p>
+      <p class="s-head">&ldquo;Camp Strong has been a life changing experience&rdquo;</p>
       <p class="s-body">With Troy's guidance, I lost over 70 pounds. I don't just feel better, I move better and have more energy than I've had in years.</p>
       <p class="s-name"><b>Mike Etheridge</b><span>Entrepreneur, 50</span></p>
     </div>
@@ -522,7 +533,7 @@
 <!-- ================= ABOUT ================= -->
 <section id="about">
   <div class="aboutgrid">
-    <figure class="photo" data-slot="about-coach"><img src="assets/gen-coach.jpg" alt="Coach Troy at Camp Strong Performance in Apopka, Florida"></figure>
+    <figure class="photo" data-slot="about-coach"><img src="assets/troy-real.jpg" alt="Coach Troy Morris of Camp Strong Performance in Apopka, Florida"></figure>
     <div class="abouttxt">
       <p class="eyebrow" style="text-align:left">About Us</p>
       <h2>Built on <span class="rd">25 Years</span> at the Highest Level</h2>
@@ -582,10 +593,10 @@
   <div class="formwrap">
     <form id="leadForm" novalidate>
       <div class="frow">
-        <div class="field"><label for="f-name">Full Name</label><input id="f-name" name="name" type="text" placeholder="Your name" required></div>
-        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" placeholder="(352) 555-0123" required></div>
+        <div class="field"><label for="f-name">Full Name</label><input id="f-name" name="name" type="text" placeholder="Your name" required aria-describedby="err-name"><p class="ferr" id="err-name"></p></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" placeholder="(352) 555-0123" required aria-describedby="err-phone"><p class="ferr" id="err-phone"></p></div>
       </div>
-      <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="you@email.com"></div>
+      <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="you@email.com" aria-describedby="err-email"><p class="ferr" id="err-email"></p></div>
       <div class="field"><label for="f-interest">I'm Interested In</label>
         <select id="f-interest" name="interest">
           <option>Free Assessment</option>
@@ -598,12 +609,14 @@
         </select>
       </div>
       <div class="field"><label for="f-msg">Your Goals</label><textarea id="f-msg" name="message" placeholder="Tell us about your goals, your sport, or anything we should know…"></textarea></div>
-      <button class="submitbtn" type="submit">Request My Free Assessment</button>
+      <input type="checkbox" name="botcheck" id="f-botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="formerr" id="formErr" role="alert"></div>
+      <button class="submitbtn" id="submitBtn" type="submit">Request My Free Assessment</button>
       <p class="formnote">Prefer to talk? Call <a href="tel:+13528772186" style="color:#fff;font-weight:bold">(352) 877-2186</a> during facility hours.</p>
     </form>
-    <div class="formok" id="formOk">
+    <div class="formok" id="formOk" role="status">
       <div class="ok-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></div>
-      <h3>Request Received</h3>
+      <h3 tabindex="-1" id="formOkHead">Request Received</h3>
       <p>Thanks for reaching out — the Camp Strong team will be in touch to schedule your assessment. Want to lock it in faster? Call us at <a href="tel:+13528772186" style="color:#fff;font-weight:bold">(352) 877-2186</a>.</p>
     </div>
   </div>
@@ -631,12 +644,12 @@
 </footer>
 
 <!-- ================= AI CHATBOT ================= -->
-<button class="chatfab" id="chatFab" aria-label="Chat with the Camp Strong Performance assistant">
+<button class="chatfab" id="chatFab" aria-label="Chat with the Camp Strong Performance assistant" aria-controls="chatPanel" aria-expanded="false">
   <span class="dot" aria-hidden="true"></span>
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.3c-1.5 0-3-.4-4.2-1.1L3 20l1.4-5.1A8.3 8.3 0 0 1 3 11.5 8.4 8.4 0 0 1 11.5 3h1A8.4 8.4 0 0 1 21 11.5z"/></svg>
   <span class="fabtxt">Chat with us</span>
 </button>
-<div class="chatpanel" id="chatPanel" role="dialog" aria-label="Chat with the Camp Strong Performance assistant">
+<div class="chatpanel" id="chatPanel" role="dialog" aria-modal="true" aria-label="Chat with the Camp Strong Performance assistant">
   <div class="chathead">
     <div class="chatava"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/></svg></div>
     <div>
@@ -645,7 +658,7 @@
     </div>
     <button class="chatx" id="chatClose" aria-label="Close chat">&times;</button>
   </div>
-  <div class="chatmsgs" id="chatMsgs"></div>
+  <div class="chatmsgs" id="chatMsgs" aria-live="polite"></div>
   <div class="chatchips" id="chatChips">
     <button class="chip" data-q="What programs do you offer?">Our programs</button>
     <button class="chip hot" data-q="How do I book a free assessment?">Book a free assessment</button>
@@ -660,32 +673,115 @@
 </div>
 
 <script>
-/* Lead form — front-end only for now. Submissions wire into
-   Zen Planner when client access lands (see BUILD-NOTES.md). */
+/* ============================================================
+   LEAD FORM — Web3Forms endpoint (https://api.web3forms.com).
+   CONFIG: WEB3FORMS_ACCESS_KEY below is the single endpoint
+   constant. Paste the Web3Forms access key issued for this
+   site and submissions are delivered by Web3Forms to the
+   inbox bound to that key. The success state shows ONLY on
+   a confirmed API success — never on a failed send.
+   ============================================================ */
 (function () {
+  'use strict';
+  var WEB3FORMS_ACCESS_KEY = 'PASTE_WEB3FORMS_ACCESS_KEY_HERE'; /* <-- CONFIG: single endpoint constant */
+  var WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+
   var form = document.getElementById('leadForm');
   var ok = document.getElementById('formOk');
+  var okHead = document.getElementById('formOkHead');
+  var errBox = document.getElementById('formErr');
+  var btn = document.getElementById('submitBtn');
+  var F = {
+    name: document.getElementById('f-name'),
+    phone: document.getElementById('f-phone'),
+    email: document.getElementById('f-email'),
+    interest: document.getElementById('f-interest'),
+    message: document.getElementById('f-msg'),
+    botcheck: document.getElementById('f-botcheck')
+  };
+
+  function setErr(input, errId, msg) {
+    var e = document.getElementById(errId);
+    if (msg) {
+      e.textContent = msg;
+      e.classList.add('show');
+      input.setAttribute('aria-invalid', 'true');
+    } else {
+      e.textContent = '';
+      e.classList.remove('show');
+      input.removeAttribute('aria-invalid');
+    }
+  }
+  ['name', 'phone', 'email'].forEach(function (k) {
+    F[k].addEventListener('input', function () {
+      setErr(F[k], 'err-' + k, '');
+      errBox.classList.remove('show');
+    });
+  });
+
+  function validate() {
+    var firstBad = null;
+    if (!F.name.value.trim()) { setErr(F.name, 'err-name', 'Please enter your name.'); firstBad = F.name; }
+    var digits = F.phone.value.replace(/\D/g, '');
+    if (digits.length < 7) { setErr(F.phone, 'err-phone', 'Please enter a phone number we can reach you at.'); if (!firstBad) firstBad = F.phone; }
+    var em = F.email.value.trim();
+    if (em && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { setErr(F.email, 'err-email', 'That email doesn\'t look complete — check it, or leave it blank.'); if (!firstBad) firstBad = F.email; }
+    if (firstBad) firstBad.focus();
+    return !firstBad;
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    var name = document.getElementById('f-name');
-    var phone = document.getElementById('f-phone');
-    if (!name.value.trim()) { name.focus(); return; }
-    if (!phone.value.trim()) { phone.focus(); return; }
-    form.style.display = 'none';
-    ok.style.display = 'block';
-    ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    errBox.classList.remove('show');
+    if (!validate()) return;
+    if (F.botcheck.checked) return; /* honeypot: silently drop bots */
+
+    btn.disabled = true;
+    var label = btn.textContent;
+    btn.textContent = 'Sending…';
+
+    var payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: 'New Camp Strong lead — ' + F.interest.value,
+      from_name: 'Camp Strong Performance Website',
+      name: F.name.value.trim(),
+      phone: F.phone.value.trim(),
+      email: F.email.value.trim(),
+      replyto: F.email.value.trim(),
+      interest: F.interest.value,
+      message: F.message.value.trim(),
+      botcheck: false
+    };
+
+    fetch(WEB3FORMS_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data && data.success === true) {
+          form.style.display = 'none';
+          ok.style.display = 'block';
+          ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          okHead.focus();
+        } else {
+          throw new Error('send failed');
+        }
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = label;
+        errBox.innerHTML = 'Something went wrong sending that — your request was <strong>not</strong> received. Please call us at <a href="tel:+13528772186" style="color:#fff;font-weight:bold">(352) 877-2186</a> and we\'ll take care of you right away.';
+        errBox.classList.add('show');
+        errBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
   });
 })();
 </script>
 
 <script>
-/* ============================================================
-   CAMP STRONG PERFORMANCE — on-page assistant (client-side
-   only, no external calls). Loaded with the facility's four
-   programs, four training pillars, hours, location, assessment
-   booking path, and member stories. Always steers back to
-   booking a free assessment or calling the facility.
-   ============================================================ */
+/* Camp Strong Performance — on-page assistant (client-side only). */
 (function () {
   var TEL = 'tel:+13528772186';
   var PHONE = '(352) 877-2186';
@@ -715,14 +811,14 @@
   var ANSWERS = {
     assessment: '<p>Easy — here\'s how it works:</p><ul><li><strong>1.</strong> Fill out the short form on this page (tap "Book a Free Assessment" below) or call us.</li><li><strong>2.</strong> The team reaches out to lock in a time that fits the facility hours.</li><li><strong>3.</strong> You come in, tour the facility, talk goals, and get assessed — no pressure, no obligation.</li></ul>' + cta,
     consultation: '<p>We offer online consultations if you\'d rather talk it through before coming in. Just choose "Online Consultation" on the booking form, or call and the team will set it up.</p>' + cta,
-    price: '<p>Straight answer: membership pricing isn\'t published online, because the right program depends on your goals and how you train. That\'s what the <strong>free assessment</strong> is for — Coach Troy\'s team maps out your options and exact pricing in person, with zero pressure.</p>' + cta,
+    price: '<p>Straight answer: membership pricing isn\'t published online. The <strong>free assessment</strong> is the best place to talk through the right program and current options — or call (352) 877-2186 and the team can help.</p>' + cta,
     hours: '<p>Our training hours are:</p><ul><li><strong>Monday – Friday:</strong> 5:30 AM – 12:00 PM and 4:30 PM – 7:00 PM</li><li><strong>Saturday:</strong> 8:00 AM – 10:00 AM</li></ul><p>We\'re at <strong>1079 West Orange Blossom Trail, Apopka, FL 32712</strong>.</p>' + cta,
     location: '<p>You\'ll find us at <strong>1079 West Orange Blossom Trail, Apopka, FL 32712</strong> — <a href="' + MAPS + '" target="_blank" rel="noopener" style="color:#d64545;font-weight:bold">get directions here</a>. Training hours: Mon–Fri 5:30 AM–12 PM &amp; 4:30–7 PM, Sat 8–10 AM.</p>' + cta,
     pillars: '<p>Everything at Camp Strong is built on <strong>four pillars</strong>:</p><ul><li><strong>Strength Development</strong> — strength is the foundation of all athletic performance.</li><li><strong>Speed, Agility &amp; Acceleration</strong> — because speed wins games.</li><li><strong>Power &amp; Explosiveness</strong> — strength expressed quickly.</li><li><strong>Mobility &amp; Injury Resilience</strong> — availability is the greatest ability.</li></ul><p>Every program trains all four.</p>' + cta,
     coach: '<p>Camp Strong is led by <strong>Coach Troy</strong>, built on <strong>25 years of NBA and collegiate strength &amp; conditioning experience</strong>. The philosophy is simple: provide structure — safely, progressively, and with purpose — so athletes move better, train smarter, and perform with confidence.</p>' + cta,
-    stories: '<p>Our members say it best. <strong>Mike Etheridge</strong>, 50, lost over 70 pounds training with Troy: <em>"Camp Strong has been a life changing experience… I don\'t just feel better, I move better and have more energy than I\'ve had in years."</em></p><p>And <strong>Joseph H.</strong>, a disabled Army veteran, 70: <em>"It\'s more than fitness — it\'s purpose."</em></p><p>Want your own story? Start here:</p>' + cta,
+    stories: '<p>Our members say it best. <strong>Mike Etheridge</strong>, 50, on training with Troy: <em>"Camp Strong has been a life changing experience. With Troy\'s guidance, I lost over 70 pounds."</em> He says he doesn\'t just feel better — he moves better and has more energy than he\'s had in years.</p><p>And <strong>Joseph H.</strong>, a disabled Army veteran, 70: <em>"It\'s more than fitness — it\'s purpose."</em></p><p>Want your own story? Start here:</p>' + cta,
     injury: '<p>That\'s exactly what our <strong>Mobility &amp; Injury Resilience</strong> pillar is for — joint integrity, soft tissue quality, and range of motion under control. Training here is adaptive and coached, and the free assessment is where the team learns your history and builds around it safely.</p>' + cta,
-    kids: '<p>Our <strong>Athlete Performance</strong> program was created to bring professional standards to developing athletes right here in Apopka — structured, intentional development with coaching at every session. The free assessment is the best way to see if it\'s the right fit for your athlete.</p>' + cta,
+    kids: '<p>Our <strong>Athlete Performance</strong> program was created to bring professional standards to developing athletes right here in Apopka — structured, intentional development. The free assessment is the best way to see if it\'s the right fit for your athlete.</p>' + cta,
     weightloss: '<p>Plenty of our adult members started with exactly that goal — Mike Etheridge lost over 70 pounds here. <strong>Adult Performance</strong> combines coach-led strength training, conditioning, and progressive programming that actually sticks. The free assessment maps out your starting point.</p>' + cta,
     call: '<p>You got it — the team is happy to talk through programs, hours, or getting started. No call center, just the facility:</p>' + cta,
     greeting: '<p>Hey there — welcome to <strong>Camp Strong Performance</strong>, Apopka\'s home for athlete development. I can walk you through our programs, hours, or how the free assessment works. What are you looking to do — get faster, get stronger, or just get started?</p>',
@@ -735,8 +831,8 @@
   function answer(raw) {
     var t = ' ' + raw.toLowerCase().replace(/[^a-z0-9 ]/g, ' ') + ' ';
     if (has(t, [' veteran ', ' veterans ', ' military ', ' army ', ' navy ', ' marines ', ' air force ', ' served ', ' va '])) return progOne(2, 'Two of our veteran members put it best — Joseph H. regained mobility and confidence after a shoulder injury, and Leilani M. calls it "smart training, real results."');
-    if (has(t, [' assessment ', ' book ', ' booking ', ' sign up ', ' signup ', ' join ', ' get started ', ' start ', ' trial ', ' visit ', ' tour '])) return ANSWERS.assessment;
     if (has(t, [' consultation ', ' consult ', ' online ', ' virtual ', ' zoom '])) return ANSWERS.consultation;
+    if (has(t, [' assessment ', ' book ', ' booking ', ' sign up ', ' signup ', ' join ', ' get started ', ' start ', ' trial ', ' visit ', ' tour '])) return ANSWERS.assessment;
     if (has(t, [' price ', ' pricing ', ' cost ', ' how much ', ' membership ', ' fees ', ' fee ', ' pay '])) return ANSWERS.price;
     if (has(t, [' athlete ', ' athletes ', ' sport ', ' sports ', ' faster ', ' speed ', ' agility ', ' son ', ' daughter ', ' kid ', ' kids ', ' youth ', ' high school ', ' college ', ' team '])) {
       if (has(t, [' kid ', ' kids ', ' youth ', ' son ', ' daughter ', ' high school '])) return ANSWERS.kids;
@@ -792,17 +888,32 @@
   }
   function openChat() {
     panel.classList.add('open');
+    fab.setAttribute('aria-expanded', 'true');
     if (!greeted) {
       greeted = true;
       botReply('<p>Hi there — welcome to <strong>Camp Strong Performance</strong>! I\'m the facility\'s assistant. Ask me about our programs, training hours, or booking a free assessment — or tell me your goal and I\'ll point you to the right program.</p>');
     }
     setTimeout(function () { input.focus(); }, 80);
   }
-  function closeChat() { panel.classList.remove('open'); }
+  function closeChat(skipFocus) {
+    if (!panel.classList.contains('open')) return;
+    panel.classList.remove('open');
+    fab.setAttribute('aria-expanded', 'false');
+    if (!skipFocus) fab.focus();
+  }
+  /* Basic focus containment while the chat panel is open. */
+  panel.addEventListener('keydown', function (e) {
+    if (e.key !== 'Tab') return;
+    var f = panel.querySelectorAll('button, input, a[href]');
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
 
   fab.addEventListener('click', function () { panel.classList.contains('open') ? closeChat() : openChat(); });
-  document.getElementById('chatClose').addEventListener('click', closeChat);
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeChat(); });
+  document.getElementById('chatClose').addEventListener('click', function () { closeChat(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeChat(false); });
   form.addEventListener('submit', function (e) { e.preventDefault(); send(input.value); input.value = ''; });
   var chips = document.querySelectorAll('#chatChips .chip');
   for (var i = 0; i < chips.length; i++) {
@@ -811,7 +922,7 @@
   /* In-chat "Book a Free Assessment" links close the panel so the form is visible. */
   msgs.addEventListener('click', function (e) {
     var a = e.target.closest ? e.target.closest('a[href="#book"]') : null;
-    if (a) closeChat();
+    if (a) closeChat(true);
   });
 })();
 </script>
